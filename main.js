@@ -46,7 +46,7 @@ function loop() {
         }
         console.log('looped');
         scroll(loop);
-    }, 10)
+    }, 70)
 }
 
 // Call the loop for the first time
