@@ -44,8 +44,8 @@ function loop() {
         }else {
             document.querySelector('.contact .info').classList.remove('visible');
         }
-        scroll(loop);
         console.log('looped');
+        scroll(loop);
     }, 10)
 }
 
