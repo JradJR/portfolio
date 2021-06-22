@@ -20,35 +20,38 @@ var scroll = window.requestAnimationFrame ||
 var elementsToShow = document.querySelectorAll('.about .skills .skill'); 
 let portfolioItems = document.querySelectorAll('.portfolio .box, .about .box')
 function loop() {
-
-  elementsToShow.forEach(function (element) {
-    if (isElementInViewport(element)) {
-      element.classList.add('visible');
-    }else element.classList.remove('visible');
-  });
-
-  portfolioItems.forEach(item => {
-    if(isElementInViewport(item)) item.classList.add('visible');
-    else item.classList.remove('visible');
-  })
-  
-    if(isElementInViewport(document.querySelector('.landing h2'))) {
-        document.querySelector('.landing h2').classList.add('visible');
-    }else {
-        document.querySelector('.landing h2').classList.remove('visible');
-    }
-
-
-    if(isElementInViewport(document.querySelector('.contact .info'))) {
-        document.querySelector('.contact .info').classList.add('visible');
-    }else {
-        document.querySelector('.contact .info').classList.remove('visible');
-    }
-  scroll(loop);
+    window.setTimeout(() => {
+        elementsToShow.forEach(function (element) {
+        if (isElementInViewport(element)) {
+            element.classList.add('visible');
+        }else element.classList.remove('visible');
+        });
+    
+        portfolioItems.forEach(item => {
+        if(isElementInViewport(item)) item.classList.add('visible');
+        else item.classList.remove('visible');
+        })
+        
+        if(isElementInViewport(document.querySelector('.landing h2'))) {
+            document.querySelector('.landing h2').classList.add('visible');
+        }else {
+            document.querySelector('.landing h2').classList.remove('visible');
+        }
+    
+    
+        if(isElementInViewport(document.querySelector('.contact .info'))) {
+            document.querySelector('.contact .info').classList.add('visible');
+        }else {
+            document.querySelector('.contact .info').classList.remove('visible');
+        }
+        scroll(loop);
+    }, 10)
 }
 
 // Call the loop for the first time
-loop();
+window.setTimeout(loop, 500)
+
+
 
 // Helper function from: http://stackoverflow.com/a/7557433/274826
 function isElementInViewport(el) {
