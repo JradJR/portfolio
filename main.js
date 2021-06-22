@@ -14,34 +14,35 @@ links.forEach(link => {
 // stll need to learn code  ((--  it's just copied  --))
 
 
-var scroll = window.requestAnimationFrame ||
-             // IE Fallback
-             function(callback){ window.setTimeout(callback, 1000/60)};
-var elementsToShow = document.querySelectorAll('.about .skills .skill'); 
+let scroll = window.requestAnimationFrame ||
+               // IE Fallback
+         function(callback){ window.setTimeout(callback, 1000/60)};
+let elementsToShow = document.querySelectorAll('.about .skills .skill'); 
 let portfolioItems = document.querySelectorAll('.portfolio .box, .about .box')
+let header = document.querySelector('header');
 function loop() {
     window.setTimeout(() => {
         elementsToShow.forEach(function (element) {
         if (isElementInViewport(element)) {
             element.classList.add('visible');
-        }else element.classList.remove('visible');
+        }else if(isElementInViewport(header)) element.classList.remove('visible');
         });
     
         portfolioItems.forEach(item => {
         if(isElementInViewport(item)) item.classList.add('visible');
-        else item.classList.remove('visible');
+        else if(isElementInViewport(header)) item.classList.remove('visible');
         })
         
         if(isElementInViewport(document.querySelector('.landing h2'))) {
             document.querySelector('.landing h2').classList.add('visible');
-        }else {
+        }else if(isElementInViewport(header)) {
             document.querySelector('.landing h2').classList.remove('visible');
         }
     
     
         if(isElementInViewport(document.querySelector('.contact .info'))) {
             document.querySelector('.contact .info').classList.add('visible');
-        }else {
+        }else  if(isElementInViewport(header)) {
             document.querySelector('.contact .info').classList.remove('visible');
         }
         console.log('looped');
