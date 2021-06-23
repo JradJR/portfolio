@@ -255,14 +255,11 @@ header nav .fa.clicked {
 .portfolio {
     padding: 100px 0;
 }
-.portfolio .container {
-
-}
 .portfolio .content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-}
+} 
 
 .portfolio .container .box {
     max-width: 100%;
@@ -451,13 +448,13 @@ header nav .fa.clicked {
     transition: 1s;
 }
 
-.about .content .box .skill:nth-child(1).visible .fill {
+.about .content .box.visible .skill:nth-child(1) .fill {
     width: 90%;
 }
-.about .content .box .skill:nth-child(2).visible .fill {
+.about .content .box.visible .skill:nth-child(2) .fill {
     width: 95%;
 }
-.about .content .box .skill:nth-child(3).visible .fill {
+.about .content .box.visible .skill:nth-child(3) .fill {
     width: 85%;
 }
 
