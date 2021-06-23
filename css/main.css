@@ -135,7 +135,7 @@ header nav .fa.clicked {
     header nav .fa {
         display: inline;
         font-size: 30px;
-        color: white;
+        color: var(--main-color);
     }
 }
 
@@ -175,7 +175,7 @@ header nav .fa.clicked {
     justify-content: center;
 }
 .landing h2 {
-    color: white;
+    color: var(--main-color);
     font-size: 120px;
     font-family: 'Kirang Haerang', cursive;
     word-spacing: -31px;
@@ -269,9 +269,10 @@ header nav .fa.clicked {
     max-width: 100%;
     transition-property:transform, filter;
     transition-duration: .3s;
+    display: block;
 }
 .portfolio .container .box .image:hover img {
-    transform: rotate(-2deg) scale(1.2);
+    transform: rotate(2deg) scale(1.2);
     filter: blur(1px);
 }
 .portfolio .container .box .image a {
@@ -281,7 +282,7 @@ header nav .fa.clicked {
     bottom: -100%;
     left: 0;
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--main-color);
     z-index: 1;
     font-size: 24px;
     font-weight: bold;
@@ -367,7 +368,7 @@ header nav .fa.clicked {
     border-radius: 5px;
 }
 .about .content .box .skill .text {
-    color: white;
+    color: var(--main-color);
     position: relative;
     z-index: 1;
 }
@@ -375,7 +376,7 @@ header nav .fa.clicked {
     position: absolute;
     top: -35px;
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--main-color);
     padding: 2px 3px;
     border-radius: 4px;
     transform: translateX(50%);
@@ -459,7 +460,7 @@ header nav .fa.clicked {
 }
 .contact .info .link {
     text-decoration: none;
-    color: white;
+    color: var(--main-color);
     font-weight: bold;
     font-size: 35px;
     background-color: var(--secondary-color);
@@ -483,7 +484,7 @@ footer {
     padding: 20px 0;
     background-color: var(--secondary-color);
     text-align: center;
-    color: white;
+    color: var(--main-color);
     font-size: 20px;    
 }
 
