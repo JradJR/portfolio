@@ -16,7 +16,6 @@ linksItems.forEach(link => {
 });
 
 
-
 let mainHeading = document.querySelector('.landing h2');
 let portfolioBoxes = document.querySelectorAll('.portfolio .box');
 let aboutItems = document.querySelectorAll('.about .box');
@@ -44,3 +43,4 @@ aboutItems.forEach(item => {
 })
 
 observer.observe(contactBox);
+
