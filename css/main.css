@@ -216,11 +216,11 @@ header nav .fa.clicked {
     box-shadow: 0px 0px 27px 6px  rgb(0 0 0 / 10%);
     transition-property: transform;
 }
-.landing.visible h2 {
+.landing h2.visible {
     font-size: 160px;
     transform: none;
 }
-.landing.visible h2::before {
+.landing h2.visible::before {
     transform: translateX(-50%) rotate(-9deg);
 }
 
@@ -229,14 +229,14 @@ header nav .fa.clicked {
         font-size: 100px;
         line-height: 1;
     }
-    .landing.visible h2 {
+    .landing h2.visible {
         font-size: 119px;
     }
     .landing h2::before {
         top: 55px;
         height: 50px;
     }
-    .landing.visible h2::before, .landing.visible h2::after {
+    .landing h2.visible::before, .landing h2.visible::after {
         transform: translateX(-50%) rotate(-9deg);
     }
 }
@@ -285,7 +285,7 @@ header nav .fa.clicked {
 .portfolio .content .box:nth-child(3) {
     transition-duration: 1s;
 }
-.portfolio.visible .content .box {
+.portfolio .content .box.visible {
     transform: translateY(0) scale(1);
 }
 .portfolio .container .box .image {
@@ -381,7 +381,7 @@ header nav .fa.clicked {
 .about .content .box:last-child {
     transition-duration: 1s;
 }
-.about.visible .content .box {
+.about .content .box.visible {
     transform: none;
 }
 .about .content .box h3{
@@ -456,13 +456,13 @@ header nav .fa.clicked {
     transition: 1s;
 }
 
-.about.visible .content .box .skill:nth-child(1) .fill {
+.about .content .box.visible .skill:nth-child(1) .fill {
     width: 90%;
 }
-.about.visible .content .box .skill:nth-child(2) .fill {
+.about .content .box.visible .skill:nth-child(2) .fill {
     width: 95%;
 }
-.about.visible .content .box .skill:nth-child(3) .fill {
+.about .content .box.visible .skill:nth-child(3) .fill {
     width: 85%;
 }
 
@@ -497,7 +497,7 @@ header nav .fa.clicked {
     transition: transform 1s;
     transform: translateY(50%) scale(1.15);
 }
-.contact.visible .info {
+.contact .info.visible {
     transform: none;
 }
 .contact .info .label {
@@ -538,3 +538,4 @@ footer {
     color: white;
     font-size: 20px;    
 }
+
