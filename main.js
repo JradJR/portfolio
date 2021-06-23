@@ -15,10 +15,6 @@ linksItems.forEach(link => {
     }
 });
 
-let landing = document.querySelector('.landing');
-let portfolio = document.querySelector('.portfolio');
-let about = document.querySelector('.about');
-let contact = document.querySelector('.contact');
 
 let mainHeading = document.querySelector('.landing h2');
 let portfolioBoxes = document.querySelectorAll('.portfolio .box');
@@ -36,19 +32,14 @@ const observer = new IntersectionObserver(items => {
     })
 })
 
-// observer.observe(mainHeading);
+observer.observe(mainHeading);
 
-// portfolioBoxes.forEach(box => {
-//     observer.observe(box);
-// })
+portfolioBoxes.forEach(box => {
+    observer.observe(box);
+})
 
-// aboutItems.forEach(item => {
-//     observer.observe(item);
-// })
+aboutItems.forEach(item => {
+    observer.observe(item);
+})
 
-// observer.observe(contactBox);
-
-observer.observe(landing);
-observer.observe(portfolio);
-observer.observe(about);
-observer.observe(contact);
+observer.observe(contactBox);
