@@ -1,10 +1,6 @@
 :root {
     --main-color: white;
     --secondary-color: #2a9d8f;
-    --orange-color: #e76f51;
-    --orange-light: #f4a261;
-    --orange-ex-light: #e9c46a;
-    /* --transparent-color: rgb(42 157 143 / 50%); */
     --transparent-color: #35c2b180;
 }
 html {
@@ -14,6 +10,8 @@ html {
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 body {
@@ -21,15 +19,11 @@ body {
     overflow-x: hidden;
 }
 .special-heading {
-    text-align: center;
     margin-bottom: 80px;
     display: flex;
     justify-content: center;
 }
 .special-heading h2 {
-    text-align: center;
-    text-shadow: 0 0 30px #32323263;
-    box-shadow: 0 0 20px 0px #68686875;
     border-radius: 10px;
     width: fit-content;
     padding: 10px 30px;
@@ -77,7 +71,6 @@ header .container {
 header .logo i {
     font-size: 30px;
     color: var(--main-color);
-    text-shadow: 0 0 20px rgb(0 0 0 / 10%);
 }
 header nav {
     display: flex;
@@ -95,8 +88,7 @@ header nav .links a {
     color: var(--main-color);
     font-size: 20px;
     margin-left: 15px;
-    transition: 0.3s;
-    text-shadow: 0 0 20px rgb(0 0 0 / 50%);
+    transition: transform 0.3s;
     display: inline-block;
 }
 header nav .links a:hover {
@@ -109,7 +101,6 @@ header nav .links a:hover {
         text-align: left;
         display: none;
         position: absolute;
-        display: none;
         flex-direction: column;
         top: 45px;
         left: -121px;
@@ -131,7 +122,6 @@ header nav .links a:hover {
         margin-bottom: 6px;
         padding: 10px;
         color: var(--secondary-color);
-        text-shadow: none;
     }
 }
 header nav .fa {
@@ -152,7 +142,7 @@ header nav .fa.clicked {
 .landing {
     background-image: url(../materials/test2.jpg);
     background-size: cover;
-    height: calc(100vh);
+    height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -163,7 +153,8 @@ header nav .fa.clicked {
     content: "";
     width: 100%;
     height: 100%;
-    background-color: rgb(0 0 0 /30%);
+    background-color: var(--transparent-color);
+    opacity: .2;
     position: absolute;
     top: 0;
     left: 0;
@@ -172,6 +163,7 @@ header nav .fa.clicked {
     content: "";
     width: 100%;
     height: 100%;
+    background-color: rgb(0 0 0 /30%);
     position: absolute;
     top: 0;
     left: 0;
@@ -185,22 +177,17 @@ header nav .fa.clicked {
 .landing h2 {
     color: white;
     font-size: 120px;
+    font-family: 'Kirang Haerang', cursive;
     word-spacing: -31px;
-    /* background-color: var(--transparent-color); */
-    position: relative;
     padding: 20px;
+    width: 80%;
+    position: relative;
     overflow: hidden;
-    /* box-shadow: 0 0 31px 34px #00000047; */
+    transform: translateY(20%);
     z-index: 1;
     cursor: default;
-    /* border-radius: 15px; */
-    /* margin-right: 10px; */
-    /* margin-left: 10px; */
-    text-shadow: 0 0 20px rgb(0 0 0 / 50%);
-    width: 80%;
-    font-family: 'Kirang Haerang', cursive;
     transition: 1s;
-    transform: translateY(20%);
+    transition-property: transform, font-size;
 }
 .landing h2::before {
     position: absolute;   
@@ -208,19 +195,17 @@ header nav .fa.clicked {
     width: 100%;
     height: 80px;
     left: 50%;
-    transform: translateX(-50%);
-    top: 113px;
+    top: 45%;
+    transform: translate(-50%, -50%);
     background-color: var(--transparent-color);
     z-index: -1;
-    transition: 1s;
-    box-shadow: 0px 0px 27px 6px  rgb(0 0 0 / 10%);
-    transition-property: transform;
+    transition: transform 1s;
 }
-.landing.visible h2 {
+.landing h2.visible {
     font-size: 160px;
     transform: none;
 }
-.landing.visible h2::before {
+.landing h2.visible::before {
     transform: translateX(-50%) rotate(-9deg);
 }
 
@@ -229,14 +214,14 @@ header nav .fa.clicked {
         font-size: 100px;
         line-height: 1;
     }
-    .landing.visible h2 {
+    .landing h2.visible {
         font-size: 119px;
     }
     .landing h2::before {
         top: 55px;
         height: 50px;
     }
-    .landing.visible h2::before, .landing.visible h2::after {
+    .landing h2.visible::before, .landing h2.visible::after {
         transform: translateX(-50%) rotate(-9deg);
     }
 }
@@ -247,12 +232,11 @@ header nav .fa.clicked {
         width: 100%;
         height: 50px;
         left: 50%;
-        transform: translateX(-50%);
-        top: 177px;
+        top: 65%;
+        transform: translate(-50%, -50%);
         background-color: var(--transparent-color);
         z-index: -1;
-        box-shadow: 0px 0px 27px 6px  rgb(0 0 0 / 10%);
-        transition: 0.5s;
+        transition: transform 0.5s;
     }
 }
 
@@ -270,35 +254,19 @@ header nav .fa.clicked {
 } 
 
 .portfolio .container .box {
-    max-width: 100%;
-    margin-bottom: 30px;
     transform: translateY(30%) scale(1.15);
-    transition-property: transform;
-    
+    transition: transform 1s;
 }
-.portfolio .content .box:nth-child(1) {
-    transition-duration: 1s;
-}
-.portfolio .content .box:nth-child(2) {
-    transition-duration: 1s;
-}
-.portfolio .content .box:nth-child(3) {
-    transition-duration: 1s;
-}
-.portfolio.visible .content .box {
+.portfolio .content .box.visible {
     transform: translateY(0) scale(1);
 }
 .portfolio .container .box .image {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0px 0px 20px -2px #00000054;
 }
 .portfolio .container .box .image img {
     max-width: 100%;
-    position: relative;
-    display: block;
-    transition: transform .3s;
     transition-property:transform, filter;
     transition-duration: .3s;
 }
@@ -320,7 +288,7 @@ header nav .fa.clicked {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .3s;
+    transition: bottom .3s;
     text-decoration: none;
 }
 .portfolio .container .box .image:hover a {
@@ -331,12 +299,10 @@ header nav .fa.clicked {
     padding: 10px;
     font-size: 20px;
     color: var(--secondary-color);
-    text-shadow: 0 0 8px #45454533;
 }
 .portfolio .container .box p {
     padding: 0 10px;
     font-size: 15px;
-    text-shadow: 0 0 8px #45454533;
     color: #555;
     
 }
@@ -373,22 +339,16 @@ header nav .fa.clicked {
     flex-basis: 48%;
     padding: 10px;
     transform: translateY(30%) scale(1.15);
-    transition-property: transform;
+    transition: transform 1s;
 }
-.about .content .box:first-child {
-    transition-duration: 1s;
-}
-.about .content .box:last-child {
-    transition-duration: 1s;
-}
-.about.visible .content .box {
+
+.about .content .box.visible {
     transform: none;
 }
 .about .content .box h3{
     color: var(--secondary-color);
     font-size: 25px;
     margin-bottom: 20px;
-    text-shadow: 0 0 5px #7272722c
 }
 .about .content .box:first-child p {
     line-height: 1.9;
@@ -405,7 +365,6 @@ header nav .fa.clicked {
     padding: 5px 10px;
     position: relative;
     border-radius: 5px;
-    box-shadow: 0 0 20px 9px #7878782a;
 }
 .about .content .box .skill .text {
     color: white;
@@ -415,18 +374,16 @@ header nav .fa.clicked {
 .about .content .box .skills .skill .num {
     position: absolute;
     top: -35px;
-    /* background-color: var(--main-color); */
     background-color: var(--secondary-color);
     color: white;
     padding: 2px 3px;
     border-radius: 4px;
     transform: translateX(50%);
     font-size: 13px;
-    box-shadow: 0 0 20px 5px #6b6a6a4f;
 }
 .about .content .box .skills .skill .num::before {
-    position: absolute;
     content: '';
+    position: absolute;
     width: 0;
     height: 0;
     border: 5px solid;
@@ -453,16 +410,16 @@ header nav .fa.clicked {
     top: 0;
     left: 0;
     border-radius: 4px 0 0 4px ;
-    transition: 1s;
+    transition: width 1s;
 }
 
-.about.visible .content .box .skill:nth-child(1) .fill {
+.about .content .box.visible .skill:nth-child(1) .fill {
     width: 90%;
 }
-.about.visible .content .box .skill:nth-child(2) .fill {
+.about .content .box.visible .skill:nth-child(2) .fill {
     width: 95%;
 }
-.about.visible .content .box .skill:nth-child(3) .fill {
+.about .content .box.visible .skill:nth-child(3) .fill {
     width: 85%;
 }
 
@@ -481,23 +438,17 @@ header nav .fa.clicked {
 
 
 
-
-
-
-
-
 .contact {
     padding: 100px 0;
 }
 
-.contact .container {
-    text-align: center;
-}
+
 .contact .info {
-    transition: transform 1s;
+    text-align: center;
     transform: translateY(50%) scale(1.15);
+    transition: transform 1s;
 }
-.contact.visible .info {
+.contact .info.visible {
     transform: none;
 }
 .contact .info .label {
@@ -505,7 +456,6 @@ header nav .fa.clicked {
     font-size: 35px;
     margin-bottom: 20px;
     font-weight: bold;
-    text-shadow: 0 0 20px #7c7c7c6e;
 }
 .contact .info .link {
     text-decoration: none;
@@ -515,10 +465,8 @@ header nav .fa.clicked {
     background-color: var(--secondary-color);
     padding: 10px 20px;
     border-radius: 7px;
-    box-sizing: border-box;
     display: inline-block;
     transition: transform 0.3s;
-    box-shadow: 0 0 20px 9px rgb(51 51 51 / 20%);
 }
 .contact .info .link:hover {
     transform: scale(1.03);
