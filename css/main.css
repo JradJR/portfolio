@@ -29,6 +29,7 @@ body {
     padding: 10px 30px;
     color: var(--secondary-color);
     font-size: 40px;
+    box-shadow: 1px 1px 10px 1px #ccc;
 }
 @media (max-width: 767px) {
     .special-heading h2 {
@@ -264,6 +265,7 @@ header nav .fa.clicked {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
+    box-shadow: 1px 1px 10px 1px #ccc;
 }
 .portfolio .container .box .image img {
     max-width: 100%;
@@ -366,6 +368,7 @@ header nav .fa.clicked {
     padding: 5px 10px;
     position: relative;
     border-radius: 5px;
+    box-shadow: 1px 1px 10px 1px #ccc;
 }
 .about .content .box .skill .text {
     color: var(--main-color);
@@ -381,6 +384,7 @@ header nav .fa.clicked {
     border-radius: 4px;
     transform: translateX(50%);
     font-size: 13px;
+    box-shadow: 1px 1px 10px 1px #ccc;
 }
 .about .content .box .skills .skill .num::before {
     content: '';
@@ -468,6 +472,7 @@ header nav .fa.clicked {
     border-radius: 7px;
     display: inline-block;
     transition: transform 0.3s;
+    box-shadow: 1px 1px 10px 1px #ccc;
 }
 .contact .info .link:hover {
     transform: scale(1.03);
